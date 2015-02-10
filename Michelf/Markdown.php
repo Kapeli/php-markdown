@@ -2869,7 +2869,7 @@ abstract class _MarkdownExtra_TmpImpl extends \Michelf\Markdown {
 		$pre_attr_str  = $this->code_attr_on_pre ? $attr_str : '';
 		$code_attr_str = $this->code_attr_on_pre ? '' : $attr_str;
 		if($classname !== ''){
-                	$codeblock = (new \KzykHys\Pygments\Pygments())->highlight(html_entity_decode($codeblock),$classname,'html');
+                	$codeblock = (new \KzykHys\Pygments\Pygments())->highlight(html_entity_decode($codeblock),$classname,'html', ['encoding' => 'utf-8']);
                 } else {
                 	$codeblock  = "<pre$pre_attr_str><code$code_attr_str>$codeblock</code></pre>";
 		}		
